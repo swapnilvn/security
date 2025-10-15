@@ -14,10 +14,14 @@ public class SecurityConfig {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests(requests -> (requests.anyRequest()).authenticated());
+        http.authorizeHttpRequests(requests ->
+                requests.requestMatchers("/public/**", "/h2-console/**").permitAll()
+                .anyRequest().authenticated());
         http.httpBasic(Customizer.withDefaults());
         http.sessionManagement(session
                 -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.headers(header -> header.frameOptions(frame -> frame.sameOrigin()));
+        http.csrf(csrf -> csrf.disable());
         return http.build();
     }
 }
