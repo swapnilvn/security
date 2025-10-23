@@ -1,2 +1,2 @@
-INSERT INTO my_user (id, username, password, roles) VALUES (1, 'swapnil', 'sony', ARRAY['ADMIN, USER']);
-INSERT INTO my_user (id, username, password, roles) VALUES (2, 'sony', 'me', ARRAY['USER']);
+INSERT INTO my_user (id, username, password, roles) VALUES (1, 'me', '$2a$12$DdmBezYbfAh6nExA4x227e6rwqkvIJkkKfgUOM2ftUcffjZABtaOO', ARRAY['ADMIN, USER']);
+INSERT INTO my_user (id, username, password, roles) VALUES (2, 'sony', '$2a$12$BE3W13ZjyZaVyftU8bM.7uHPx3tohGqJ1Y.axKyz2sXo2m.BEbw1m', ARRAY['USER']);
